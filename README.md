@@ -37,35 +37,39 @@ insert into users(id, name) values(2, 'billy');
 insert into users(id, name) values(3, 'chris');
 ```
 
-1. `Dirty Reads` occur in `Read Uncommitted` level.
+#### 1. `Dirty Reads` occur in `Read Uncommitted` level.
 
 ![Dirty-Reads-occur-in-Read-Uncommitted-level](1-Dirty-Reads-occur-in-Read-Uncommitted-level.jpg?raw=true)
 
-2. `Dirty Reads` don't occur in `Read Committed` level.
+#### 2. `Dirty Reads` don't occur in `Read Committed` level.
 
 ![Dirty-Reads-dont-occur-in-Read-Committed-level](2-Dirty-Reads-dont-occur-in-Read-Committed-level.jpg?raw=true)
 
-3. `Non-Repeatable Reads` occur in `Read Committed` level.
+#### 3. `Non-Repeatable Reads` occur in `Read Committed` level.
 
 ![Non-Repeatable-Reads-occur-in-Read-Committed-level](3-Non-Repeatable-Reads-occur-in-Read-Committed-level.jpg?raw=true)
 
-4. `Non-Repeatable Reads` don't occur in `Repeatable Read` level.
+#### 4. `Non-Repeatable Reads` don't occur in `Repeatable Read` level.
 
 ![Non-Repeatable-Reads-dont-occur-in-Repeatable-Read-level](4-Non-Repeatable-Reads-dont-occur-in-Repeatable-Read-level.jpg?raw=true)
 
-5. `Phantom Reads` don't occur in `Repeatable Read` level if `SELECT` only.
+#### 5. `Phantom Reads` don't occur in `Repeatable Read` level if `SELECT` only.
 
 ![Phantom-Reads-dont-occur-in-Repeatable-Read-level-if-SELECT-only](5-Phantom-Reads-dont-occur-in-Repeatable-Read-level-if-SELECT-only.jpg?raw=true)
 
 > It is more restrictive in `Repeatable Read` level of MySQL than SQL Standard, but it doesn't means MySQL prevents `Phantom Reads` entirely in `Repeatable Read` level. See the following Part 6.
 
-6. `Phantom Reads` occur in `Repeatable Read` level after `UPDATE`.
+#### 6. `Phantom Reads` occur in `Repeatable Read` level after `UPDATE`.
 
 ![Phantom-Reads-occur-in-Repeatable-Read-level-after-UPDATE](6-Phantom-Reads-occur-in-Repeatable-Read-level-after-UPDATE.jpg?raw=true)
 
-7. `Phantom Reads` don't occur in `Serializable` level.
+#### 7. `Phantom Reads` don't occur in `Serializable` level.
+
+##### 7.1 A write ops waits another transaction to be committed.
 
 ![Phantom-Reads-dont-occur-in-Serializable-level-1](7-Phantom-Reads-dont-occur-in-Serializable-level-1.jpg?raw=true)
+
+##### 7.2 A read ops waits another write transaction to be committed.
 
 ![Phantom-Reads-dont-occur-in-Serializable-level-2](7-Phantom-Reads-dont-occur-in-Serializable-level-2.jpg?raw=true)
 
