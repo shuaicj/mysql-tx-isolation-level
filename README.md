@@ -57,7 +57,7 @@ insert into users(id, name) values(3, 'chris');
 
 ![Phantom-Reads-dont-occur-in-Repeatable-Read-level-if-SELECT-only](5-Phantom-Reads-dont-occur-in-Repeatable-Read-level-if-SELECT-only.jpg?raw=true)
 
-> It is more restrictive in `Repeatable Read` level of MySQL than SQL Standard, but it doesn't means MySQL prevents `Phantom Reads` entirely in `Repeatable Read` level. See the following Part 6.
+> It is more restrictive in `Repeatable Read` level of MySQL than SQL Standard, but it doesn't mean MySQL prevents `Phantom Reads` entirely in `Repeatable Read` level. See the following Part 6.
 
 #### 6. `Phantom Reads` occur in `Repeatable Read` level after `UPDATE`.
 
